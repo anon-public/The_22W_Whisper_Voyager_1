@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf8">
+<meta  name="viewport" content="width=device-width, initial-scale=0.9">
+<title>The 22 Watt Whisper</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<canvas id="cosmosCanvas"></canvas>
+<input type="file" id="assetPicker" multiple accept="image/*" style="display:none">
+
+<div id="topHudBar" class="topHud">
+  <div id="brandBlock" style="display:flex;gap: 10px; margin-bottom: 30px;">
+    <div id="liveBeacon" style="width:11px;height:11px;background:#10B981;"></div>
+    <div>
+      <div id="subHeader" style="color:#10B981;">NASA SPACE APPS 2026 // ABANDONED BUT NOT FORGOTTEN</div>
+      <div id="mainHeader" style="color:#F8FAFC;margin:2px 0 0 0;">THE 22 WATT WHISPER</div>
+    </div>
+  </div>
+
+  <div class="telemetryGrid">
+    <div class="telemetryItem">
+      <div class="tLabel" style="color:#94A3B8;">EARTH DISTANCE</div>
+      <div id="valDist" class="tVal" style="color:#F8FAFC;margin:3px 0 0 0;">25,902,068,371 KM</div>
+    </div>
+    <div class="telemetryItem">
+      <div class="tLabel" style="color:#94A3B8;">ONE WAY LIGHT TIME</div>
+      <div id="valDelay" class="tVal" style="color:#10B981;margin:3px 0 0 0;">24H 00M 00S</div>
+    </div>
+    <div class="telemetryItem">
+      <div class="tLabel" style="color:#94A3B8;">MISSION TELEMETRY</div>
+      <div id="valStatus" class="tVal" style="color:#F59E0B;margin:3px 0 0 0;">MAG + PWS (22W TX)</div>
+    </div>
+    <div class="telemetryItem">
+      <div class="tLabel" style="color:#94A3B8;">BROADCAST CLOCK</div>
+      <div id="valClock" class="tVal" style="color:#F8FAFC;margin:3px 0 0 0;">00:00 / 00:30</div>
+    </div>
+  </div>
+</div>
+
+<div id="controlDock" class="dockWrap">
+  <button id="btnPlay" class="activePill">⏸ PAUSE</button>
+  <button id="btnRestart" title="Restart Broadcast (R)">↺ RESTART</button>
+  <button id="btnPrev" title="Previous Chapter (Left Arrow)">⏮</button>
+  <button id="btnNext" title="Next Chapter (Right Arrow)">⏭</button>
+  <button id="btnCut30" class="secondaryActive">30S JUDGE DEMO</button>
+  <button id="btnCutFull">FULL 7 CHAPTER FILM</button>
+  <button id="btnStudioOptions" class="goldPill">⚙ STUDIO OPTIONS &amp; VAULT</button>
+  <button id="btnFullscreen">⛶ FULLSCREEN [F]</button>
+  <button id="btnClean">⛶ HIDE UI [H]</button>
+</div>
+
+<div id="studioDrawer" class="optionsDrawer">
+  <div id="optionsBar" class="optionsToolbar">
+    <button id="btnSpeed" class="secondaryActive">⏱ SPEED: 1.15X</button>
+    <button id="btnVoiceCycle" class="secondaryActive">🗣 VOICE: AUTO NATURAL</button>
+    <button id="btnNarration" class="secondaryActive">🎙 VOICEOVER: ON</button>
+    <button id="btnSound" class="secondaryActive">🔊 NASA SONIFICATION: ON</button>
+    <button id="btnAddFiles" class="activePill">📁 + LOAD IMAGES TO VAULT</button>
+    <button id="btnBake" class="goldPill">💾 BAKE STANDALONE HTML</button>
+    <button id="btnClearVault">🗑 RESET VAULT</button>
+    <button id="btnCloseOptions" style="margin:0 0 0 auto;">✕ CLOSE OPTIONS</button>
+  </div>
+  <div style="display:flex;margin:10px 0 0 0;">
+    <div id="vaultStatusTitle" style="color:#10B981;">PERMANENT IMAGE VAULT (INDEXEDDB AUTO CUTOUT)</div>
+    <div id="vaultStatusSub" style="color:#94A3B8;margin:0 0 0 16px;">Titan, Io, Triton &amp; Pale Blue Dot use built in photorealistic procedural shaders. Uploaded planets &amp; Voyager are saved permanently in your browser.</div>
+  </div>
+  <div id="vaultGridContainer" class="vaultGrid"></div>
+</div>
+
+<div id="stageWrap" class="storyStage">
+  <div id="storyCard" class="narrativeCard">
+    <div style="display:flex;gap:12px;">
+      <span id="badgePhase" style="background:rgba(10,136,111,0.25);color:#10B981;padding:4px 10px;border:1px solid rgba(16,185,129,0.45);">SHOT 01</span>
+      <span id="badgeTitle" style="color:#F59E0B;">NOVEMBER 18, 2026 // ONE LIGHT DAY MILESTONE</span>
+      <span id="badgeVoiceState" style="color:#38BDF8;margin:0 0 0 auto;">● 1.15X SYNC ACTIVE</span>
+    </div>
+    <div id="storyHeadline" style="color:#F8FAFC;margin:7px 0 4px 0;">The 24 Hour Signal &amp; The Refrigerator Bulb</div>
+    <div id="storyBody" style="color:#E2E8F0;"></div>
+  </div>
+
+  <div id="scienceCard" class="takeawayCard">
+    <div style="color:#F59E0B;" id="scienceTag">VERIFIED NASA TELEMETRY</div>
+    <div id="scienceMetric" style="color:#F8FAFC;margin:6px 0 4px 0;">25.902 Billion KM</div>
+    <div id="scienceDesc" style="color:#94A3B8;"></div>
+  </div>
+</div>
+
+<div id="scrubberBar" class="timelineBar"></div>
+
+<script id="bakedAssetScript">
+window.BAKED_ASSETS = window.BAKED_ASSETS || {};
+</script>
+
+<script type="module" src="script.js" ></script>
+
+</body>
+</html>
