@@ -1250,8 +1250,20 @@ const toggleCleanView = () => {
   if (cleanMode) document.getElementById("studioDrawer").style.display = "none";
 };
 
+const toggleDockView = () => {
+  cleanMode = !cleanMode;
+  const dock = document.getElementById("controlDock");
+  dock.style.opacity = cleanMode ? "0" : "1";
+  dock.style.pointerEvents = cleanMode ? "none" : "auto";
+  if (cleanMode) document.getElementById("studioDrawer").style.display = 'none';
+
+};
+
+
+
 document.getElementById("btnFullscreen").addEventListener("click", toggleFullscreen);
 document.getElementById("btnClean").addEventListener("click", toggleCleanView);
+document.getElementById("btnShowControlDock").addEventListener("click", toggleDockView);
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "h" || e.key === "H") toggleCleanView();

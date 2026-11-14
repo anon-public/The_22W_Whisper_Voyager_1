@@ -15,7 +15,7 @@
   <div id="brandBlock" style="display:flex;gap: 10px; margin-bottom: 30px;">
     <div id="liveBeacon" style="width:11px;height:11px;background:#10B981;"></div>
     <div>
-      <div id="subHeader" style="color:#10B981;">NASA SPACE APPS 2026 // ABANDONED BUT NOT FORGOTTEN</div>
+      <div id="subHeader" style="color:#10B981;"></div>
       <div id="mainHeader" style="color:#F8FAFC;margin:2px 0 0 0;">THE 22 WATT WHISPER</div>
     </div>
   </div>
@@ -38,18 +38,6 @@
       <div id="valClock" class="tVal" style="color:#F8FAFC;margin:3px 0 0 0;">00:00 / 00:30</div>
     </div>
   </div>
-</div>
-
-<div id="controlDock" class="dockWrap">
-  <button id="btnPlay" class="activePill">⏸ PAUSE</button>
-  <button id="btnRestart" title="Restart Broadcast (R)">↺ RESTART</button>
-  <button id="btnPrev" title="Previous Chapter (Left Arrow)">⏮</button>
-  <button id="btnNext" title="Next Chapter (Right Arrow)">⏭</button>
-  <button id="btnCut30" class="secondaryActive">30S JUDGE DEMO</button>
-  <button id="btnCutFull">FULL 7 CHAPTER FILM</button>
-  <button id="btnStudioOptions" class="goldPill">⚙ STUDIO OPTIONS &amp; VAULT</button>
-  <button id="btnFullscreen">⛶ FULLSCREEN [F]</button>
-  <button id="btnClean">⛶ HIDE UI [H]</button>
 </div>
 
 <div id="studioDrawer" class="optionsDrawer">
@@ -87,6 +75,21 @@
     <div id="scienceDesc" style="color:#94A3B8;"></div>
   </div>
 </div>
+
+<div id="controlDock" class="dockWrap">
+  <button id="btnCut30" class="secondaryActive"><p class="DockText">30S JUDGE DEMO</p></button>
+  <button id="btnPrev" title="Previous Chapter (Left Arrow)"><p class="DockText">⏮</p></button>
+  <button id="btnPlay" class="activePill"><p class="DockText">⏸ Play</p></button>
+  <button id="btnNext" title="Next Chapter (Right Arrow)"><p class="DockText"></p>⏭</button>
+  <button id="btnRestart" title="Restart Broadcast (R)"><p class="DockText"> ↺ </p></button>
+  <button id="btnCutFull"><p class="DockText">FULL 7 CHAPTER FILM</p></button>
+  <button id="btnStudioOptions" class="goldPill"><p>⚙ STUDIO OPTIONS &amp; VAULT</p></button>
+  <button id="btnFullscreen"><p class="DockText">⛶ FULLSCREEN [F]</p></button>
+  <button id="btnClean"><p class="DockText">X</p></button>
+</div>
+<button id="btnShowControlDock" class="ShowControlDock">
+  <p class="DockText">Show Control Dock</p></button>
+
 
 <div id="scrubberBar" class="timelineBar"></div>
 
