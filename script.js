@@ -1,6 +1,5 @@
 import data from './data.json' with { type: 'json' };
 
-
 const M = ~0;
 const neg = (n) => n * M;
 const sub = (a, b) => a + b * M;
@@ -149,6 +148,7 @@ setCss(document.getElementById("storyHeadline"), {
   fontWeight: "700",
   letterSpacing: "0.2px"
 });
+
 setCss(document.getElementById("storyBody"), {
   fontFamily: "'Inter', sans" + H_CHAR + "serif",
   fontSize: "15.5px",
@@ -1301,11 +1301,11 @@ const drawGlassCallout = (targetX, targetY, targetR, boxX, boxY, title, subtitle
     ctx.restore();
   }
 
-  ctx.font = "700 11px 'JetBrains Mono', monospace";
+  ctx.font = "700 12.5px 'JetBrains Mono', monospace";
   const w1 = ctx.measureText(title).width;
-  ctx.font = "500 10px 'JetBrains Mono', monospace";
+  ctx.font = "500 11.5px 'JetBrains Mono', monospace";
   const w2 = subtitle ? ctx.measureText(subtitle).width : 0;
-  const boxW = Math.max(w1, w2) + 24;
+  const boxW = Math.max(w1, w2) + 36;
   const boxH = subtitle ? 42 : 26;
 
   const clampedX = Math.max(36, Math.min(sub(W, boxW + 36), sub(boxX, boxW * 0.5)));
@@ -1337,12 +1337,12 @@ const drawGlassCallout = (targetX, targetY, targetR, boxX, boxY, title, subtitle
   ctx.fillRect(clampedX, clampedY, 3, boxH);
 
   ctx.fillStyle = accentColor;
-  ctx.font = "700 11px 'JetBrains Mono', monospace";
+  ctx.font = "700 12.5px 'JetBrains Mono', monospace";
   ctx.fillText(title, clampedX + 12, clampedY + 16);
 
   if (subtitle) {
     ctx.fillStyle = "#CBD5E1";
-    ctx.font = "500 10px 'JetBrains Mono', monospace";
+    ctx.font = "500 11.5px 'JetBrains Mono', monospace";
     ctx.fillText(subtitle, clampedX + 12, clampedY + 32);
   }
   ctx.restore();
@@ -1703,7 +1703,7 @@ const renderSceneGraphics = (type, prog, now) => {
       const mx = ex + sub(vx, ex) * mk.p;
       ctx.fillStyle = mk.p === 1.0 ? "#F59E0B" : "#64748B";
       ctx.fillRect(sub(mx, 1), cy + 86, 2, 12);
-      ctx.font = "600 10px 'JetBrains Mono', monospace";
+      ctx.font = "600 12px 'JetBrains Mono', monospace";
       ctx.fillText(mk.t, sub(mx, 44), cy + 112);
     });
 
@@ -2153,3 +2153,6 @@ const animateFrame = (now) => {
 
 buildScrubber();
 requestAnimationFrame(animateFrame);
+
+
+
