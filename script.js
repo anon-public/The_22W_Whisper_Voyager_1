@@ -575,79 +575,79 @@ const renderVaultGridUI = () => {
     if (rawAssets[k].canvas) savedCount += 1;
   });
 
-  const optBtn = document.getElementById("btnStudioOptions");
-  optBtn.textContent = "⚙ STUDIO OPTIONS (" + savedCount + "/" + keys.length + " ASSETS)";
+  // const optBtn = document.getElementById("btnStudioOptions");
+  // optBtn.textContent = "⚙ STUDIO OPTIONS (" + savedCount + "/" + keys.length + " ASSETS)";
 
-  const grid = document.getElementById("vaultGridContainer");
-  if (!grid) return;
-  grid.innerHTML = "";
+  // const grid = document.getElementById("vaultGridContainer");
+  // if (!grid) return;
+  // grid.innerHTML = "";
 
-  keys.forEach((k) => {
-    const item = rawAssets[k];
-    const slot = document.createElement("div");
-    slot.className = "vaultSlot";
-    setCss(slot, {
-      borderRadius: "8px",
-      alignItems: "center",
-      borderColor: item.canvas ? "rgba(16, 185, 129, 0.55)" : "rgba(148, 163, 184, 0.22)"
-    });
+  // keys.forEach((k) => {
+  //   const item = rawAssets[k];
+  //   const slot = document.createElement("div");
+  //   slot.className = "vaultSlot";
+  //   setCss(slot, {
+  //     borderRadius: "8px",
+  //     alignItems: "center",
+  //     borderColor: item.canvas ? "rgba(16, 185, 129, 0.55)" : "rgba(148, 163, 184, 0.22)"
+  //   });
 
-    const thumb = document.createElement("div");
-    setCss(thumb, {
-      width: "38px",
-      height: "38px",
-      borderRadius: "6px",
-      background: "#04070E",
-      border: "1px solid rgba(148,163,184,0.2)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      overflow: "hidden"
-    });
+  //   const thumb = document.createElement("div");
+  //   setCss(thumb, {
+  //     width: "38px",
+  //     height: "38px",
+  //     borderRadius: "6px",
+  //     background: "#04070E",
+  //     border: "1px solid rgba(148,163,184,0.2)",
+  //     display: "flex",
+  //     alignItems: "center",
+  //     justifyContent: "center",
+  //     overflow: "hidden"
+  //   });
 
-    if (item.dataUrl) {
-      const tImg = document.createElement("img");
-      tImg.src = item.dataUrl;
-      setCss(tImg, { maxWidth: "34px", maxHeight: "34px" });
-      thumb.appendChild(tImg);
-    } else {
-      thumb.textContent = item.ready ? "⚡" : "○";
-      thumb.style.color = item.ready ? "#F59E0B" : "#64748B";
-    }
+  //   if (item.dataUrl) {
+  //     const tImg = document.createElement("img");
+  //     tImg.src = item.dataUrl;
+  //     setCss(tImg, { maxWidth: "34px", maxHeight: "34px" });
+  //     thumb.appendChild(tImg);
+  //   } else {
+  //     thumb.textContent = item.ready ? "⚡" : "○";
+  //     thumb.style.color = item.ready ? "#F59E0B" : "#64748B";
+  //   }
 
-    const meta = document.createElement("div");
-    const title = document.createElement("div");
-    title.textContent = item.label;
-    setCss(title, {
-      fontFamily: "'JetBrains Mono', monospace",
-      fontSize: "10.5px",
-      fontWeight: "700",
-      color: "#F8FAFC"
-    });
+  //   const meta = document.createElement("div");
+  //   const title = document.createElement("div");
+  //   title.textContent = item.label;
+  //   setCss(title, {
+  //     fontFamily: "'JetBrains Mono', monospace",
+  //     fontSize: "10.5px",
+  //     fontWeight: "700",
+  //     color: "#F8FAFC"
+  //   });
 
-    const status = document.createElement("div");
-    if (item.canvas) {
-      status.textContent = "✓ SAVED IN VAULT";
-      status.style.color = "#10B981";
-    } else if (item.ready) {
-      status.textContent = "⚡ LOADED (DROP TO SAVE)";
-      status.style.color = "#F59E0B";
-    } else {
-      status.textContent = "○ " + item.files[0];
-      status.style.color = "#94A3B8";
-    }
-    setCss(status, {
-      fontFamily: "'JetBrains Mono', monospace",
-      fontSize: "9px",
-      marginTop: "2px"
-    });
+  //   const status = document.createElement("div");
+  //   if (item.canvas) {
+  //     status.textContent = "✓ SAVED IN VAULT";
+  //     status.style.color = "#10B981";
+  //   } else if (item.ready) {
+  //     status.textContent = "⚡ LOADED (DROP TO SAVE)";
+  //     status.style.color = "#F59E0B";
+  //   } else {
+  //     status.textContent = "○ " + item.files[0];
+  //     status.style.color = "#94A3B8";
+  //   }
+  //   setCss(status, {
+  //     fontFamily: "'JetBrains Mono', monospace",
+  //     fontSize: "9px",
+  //     marginTop: "2px"
+  //   });
 
-    meta.appendChild(title);
-    meta.appendChild(status);
-    slot.appendChild(thumb);
-    slot.appendChild(meta);
-    grid.appendChild(slot);
-  });
+  //   meta.appendChild(title);
+  //   meta.appendChild(status);
+  //   slot.appendChild(thumb);
+  //   slot.appendChild(meta);
+  //   grid.appendChild(slot);
+  // });
 };
 
 const initializeAssetPipeline = async () => {
@@ -772,19 +772,19 @@ document.getElementById("btnStudioOptions").addEventListener("click", () => {
 document.getElementById("btnCloseOptions").addEventListener("click", () => {
   document.getElementById("studioDrawer").style.display = "none";
 });
-document.getElementById("btnAddFiles").addEventListener("click", () => {
-  document.getElementById("assetPicker").click();
-});
-document.getElementById("btnBake").addEventListener("click", bakeStandaloneHtmlFile);
-document.getElementById("btnClearVault").addEventListener("click", async () => {
-  await clearVaultDB();
-  Object.keys(rawAssets).forEach((k) => {
-    rawAssets[k].canvas = null;
-    rawAssets[k].dataUrl = null;
-    rawAssets[k].ready = false;
-  });
-  renderVaultGridUI();
-});
+// document.getElementById("btnAddFiles").addEventListener("click", () => {
+//   document.getElementById("assetPicker").click();
+// });
+// document.getElementById("btnBake").addEventListener("click", bakeStandaloneHtmlFile);
+// document.getElementById("btnClearVault").addEventListener("click", async () => {
+//   await clearVaultDB();
+//   Object.keys(rawAssets).forEach((k) => {
+//     rawAssets[k].canvas = null;
+//     rawAssets[k].dataUrl = null;
+//     rawAssets[k].ready = false;
+//   });
+//   renderVaultGridUI();
+// });
 
 document.getElementById("assetPicker").addEventListener("change", (e) => {
   if (e.target.files && e.target.files.length > 0) {
@@ -805,7 +805,7 @@ initializeAssetPipeline();
 /* ============================================================================
    PUNCHY, CURIOUS, FACT VERIFIED STORY PLAYLISTS
 ============================================================================ */
-const cutFullScenes = data.cut30Scenes;
+const cutFullScenes = data.cut30Scenes.slice(4);
 const cut30Scenes = cutFullScenes.slice(0,4);
 
 
@@ -1093,7 +1093,8 @@ const jumpToChapter = (targetIdx) => {
   elapsedSec = jumpSec;
   lastFrameTime = performance.now();
   isPlaying = true;
-  document.getElementById("btnPlay").textContent = "⏸ PAUSE";
+  document.getElementById("btnPlay").textContent = "⏸ PLAY";
+  document.getElementById("btnPlay").style.fontSize = "20px";
   currentIdx = M;
 };
 
@@ -1145,7 +1146,8 @@ const restartShow = () => {
   elapsedSec = 0;
   lastFrameTime = performance.now();
   isPlaying = true;
-  document.getElementById("btnPlay").textContent = "⏸ PAUSE";
+  document.getElementById("btnPlay").textContent = "⏸ PLAY";
+  document.getElementById("btnPlay").fontSize = "20px";
   currentIdx = M;
 };
 
@@ -1157,11 +1159,12 @@ const togglePlayPause = () => {
   }
   isPlaying = !isPlaying;
   lastFrameTime = performance.now();
-  document.getElementById("btnPlay").textContent = isPlaying ? "⏸ PAUSE" : "▶ RESUME";
+  document.getElementById("btnPlay").textContent = isPlaying ? "⏸ PLAY" : "▶ RESUME";
   if ("speechSynthesis" in window) {
     if (!isPlaying) {
       window.speechSynthesis.cancel();
       document.getElementById("badgeVoiceState").textContent = "⏸ PAUSED";
+      
     } else if (voiceActive && currentIdx >= 0) {
       speakSceneVoiceover(activePlaylist[currentIdx].voiceScript);
     }
@@ -1171,6 +1174,7 @@ const togglePlayPause = () => {
 window.addEventListener("pointerdown", () => { initMaximumSpaceAudio(); }, { once: true });
 
 document.getElementById("btnPlay").addEventListener("click", togglePlayPause);
+  document.getElementById("btnPlay").style.fontSize = "20px";
 document.getElementById("btnRestart").addEventListener("click", restartShow);
 document.getElementById("btnPrev").addEventListener("click", () => jumpToChapter(sub(currentIdx, 1)));
 document.getElementById("btnNext").addEventListener("click", () => jumpToChapter(currentIdx + 1));
@@ -1258,7 +1262,6 @@ const toggleDockView = () => {
   if (cleanMode) document.getElementById("studioDrawer").style.display = 'none';
 
 };
-
 
 
 document.getElementById("btnFullscreen").addEventListener("click", toggleFullscreen);
@@ -1451,18 +1454,18 @@ const drawRealisticIoAndPlume = (x, y, radius, timeMs) => {
   ctx.fillStyle = plumeGrad;
   ctx.beginPath();
   ctx.moveTo(neg(3), 0);
-  ctx.quadraticCurveTo(neg(pW * 0.85), neg(pH * 1.15), neg(pW * 0.92), neg(pH * 0.15));
-  ctx.quadraticCurveTo(0, neg(pH * 1.45), pW * 0.92, neg(pH * 0.15));
-  ctx.quadraticCurveTo(pW * 0.85, neg(pH * 1.15), 3, 0);
+  ctx.quadraticCurveTo(neg(pW * 0.22), neg(pH * 1.15), neg(pW * 0.92), neg(pH * 0.15));
+  ctx.quadraticCurveTo(0, neg(pH * 1), pW * 0.92, neg(pH * 0.15));
+  ctx.quadraticCurveTo(pW * 0.22, neg(pH * 1), 1, 0);
   ctx.closePath();
   ctx.fill();
 
   /* Central volcanic fountain stem */
-  ctx.strokeStyle = "rgba(254, 240, 138, 0.75)";
-  ctx.lineWidth = 2.2;
+  // ctx.strokeStyle = "rgba(254, 240, 138, 0.75)";
+  // ctx.lineWidth = 0.5;
   ctx.beginPath();
   ctx.moveTo(0, 2);
-  ctx.lineTo(0, neg(pH * 0.82));
+  // ctx.lineTo(0, neg(pH * 0.82));
   ctx.stroke();
   ctx.restore();
 
@@ -1517,10 +1520,10 @@ const drawRealisticTriton = (x, y, radius, timeMs) => {
   /* 8 km vertical nitrogen geyser drifting 160 km downwind */
   tritonPlumeParticles.forEach((gp) => {
     const t = (timeMs * 0.00045 + gp.phase) % 1;
-    const gx = x + (t > 0.22 ? sub(t, 0.22) * 82 : 0);
-    const gy = sub(y, radius + Math.min(0.22, t) * 90) + gp.jitter * t;
+    const gx = x + (t > 0.22 ? sub(t, 0.22) * 60 : 0);
+    const gy = sub(y, radius + Math.min(0.22, t) *15) + gp.jitter * t;
     ctx.beginPath();
-    ctx.arc(gx, gy, 2.1, 0, Math.PI * 2);
+    ctx.arc(gx, gy, 2.1, 0, Math.PI * 1.5);
     ctx.fillStyle = "rgba(56, 189, 248, " + sub(0.88, t * 0.78) + ")";
     ctx.fill();
   });
@@ -1764,7 +1767,7 @@ const renderSceneGraphics = (type, prog, now) => {
     ctx.fill();
 
     /* Separate Magnified Circular Inset Pod at Center Top so reflector.png NEVER overlaps the Moon! */
-    const podX = W * 0.50;
+    const podX = W * 0.6;
     const podY = sub(cy, 58);
     const podR = 52;
 
@@ -1908,7 +1911,7 @@ const renderSceneGraphics = (type, prog, now) => {
     const plumeAnchor = drawRealisticIoAndPlume(ix, iy, 32, now);
 
     drawVoyagerCraft(W * 0.82, sub(cy, 8), 162, 0.1, now);
-    drawGlassCallout(plumeAnchor.vx, plumeAnchor.vy, 22, ix + 25, sub(cy, 112), "IO VOLCANIC PLUME: 300 KM HIGH", "LINDA MORABITO DISCOVERY (MAR 8, 1979)", "#10B981", now);
+    drawGlassCallout(plumeAnchor.vx - 23, plumeAnchor.vy  + 16, 32, ix + 25, sub(cy, 128), "IO VOLCANIC PLUME: 300 KM HIGH", "LINDA MORABITO DISCOVERY (MAR 8, 1979)", "#ad9771", now);
   } else if (type === "titanSlingshot") {
     const sx = W * 0.24;
     const sy = cy + 4;
@@ -2035,7 +2038,7 @@ const renderSceneGraphics = (type, prog, now) => {
       ctx.save();
       ctx.translate(gx, gy);
       /* Gentle, authentic cosmic drift instead of fast spinning */
-      ctx.rotate(neg(0.18) + Math.sin(now * 0.00015) * 0.03);
+      ctx.rotate(neg(0.18) + Math.sin(now * 0.00015) * 0.1);
       ctx.globalCompositeOperation = "screen";
       ctx.drawImage(galSrc, neg(210), neg(145), 420, 290);
       ctx.globalCompositeOperation = "source" + H_CHAR + "over";
@@ -2048,7 +2051,7 @@ const renderSceneGraphics = (type, prog, now) => {
       ctx.stroke();
     }
 
-    drawGlassCallout(gx, gy, 65, gx, sub(cy, 118), "ANDROMEDA GALACTIC MERGER", "3 BILLION YRS // OUTLIVES THE STARS", "#F59E0B", now);
+    drawGlassCallout(gx, gy, 65, gx, sub(cy, 118), "ANDROMEDA GALACTIC MERGER", "3 BILLION YRS // OUTLIVES THE STARS", "#ffffff00", now);
   }
 
   ctx.restore();
@@ -2086,6 +2089,7 @@ const animateFrame = (now) => {
       elapsedSec = tot;
       isPlaying = false;
       document.getElementById("btnPlay").textContent = "▶ REPLAY";
+      document.getElementById("btnPlay").style.fontSize = "20px";
     }
   }
 

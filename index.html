@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 <canvas id="cosmosCanvas"></canvas>
 <input type="file" id="assetPicker" multiple accept="image/*" style="display:none">
 
@@ -46,17 +47,15 @@
     <button id="btnVoiceCycle" class="secondaryActive">🗣 VOICE: AUTO NATURAL</button>
     <button id="btnNarration" class="secondaryActive">🎙 VOICEOVER: ON</button>
     <button id="btnSound" class="secondaryActive">🔊 NASA SONIFICATION: ON</button>
-    <button id="btnAddFiles" class="activePill">📁 + LOAD IMAGES TO VAULT</button>
-    <button id="btnBake" class="goldPill">💾 BAKE STANDALONE HTML</button>
-    <button id="btnClearVault">🗑 RESET VAULT</button>
-    <button id="btnCloseOptions" style="margin:0 0 0 auto;">✕ CLOSE OPTIONS</button>
+    <button id="btnCloseOptions" style="margin:0 0 0 auto;">✕</button>
   </div>
   <div style="display:flex;margin:10px 0 0 0;">
-    <div id="vaultStatusTitle" style="color:#10B981;">PERMANENT IMAGE VAULT (INDEXEDDB AUTO CUTOUT)</div>
-    <div id="vaultStatusSub" style="color:#94A3B8;margin:0 0 0 16px;">Titan, Io, Triton &amp; Pale Blue Dot use built in photorealistic procedural shaders. Uploaded planets &amp; Voyager are saved permanently in your browser.</div>
+    <div id="vaultStatusTitle" style="color:#10B981;"></div>
+    <div id="vaultStatusSub" style="color:#94A3B8;margin:0 0 0 16px;"></div>
   </div>
   <div id="vaultGridContainer" class="vaultGrid"></div>
 </div>
+
 
 <div id="stageWrap" class="storyStage">
   <div id="storyCard" class="narrativeCard">
@@ -76,26 +75,23 @@
   </div>
 </div>
 
-<div id="controlDock" class="dockWrap">
-  <button id="btnCut30" class="secondaryActive"><p class="DockText">30S JUDGE DEMO</p></button>
-  <button id="btnPrev" title="Previous Chapter (Left Arrow)"><p class="DockText">⏮</p></button>
-  <button id="btnPlay" class="activePill"><p class="DockText">⏸ Play</p></button>
-  <button id="btnNext" title="Next Chapter (Right Arrow)"><p class="DockText"></p>⏭</button>
-  <button id="btnRestart" title="Restart Broadcast (R)"><p class="DockText"> ↺ </p></button>
-  <button id="btnCutFull"><p class="DockText">FULL 7 CHAPTER FILM</p></button>
-  <button id="btnStudioOptions" class="goldPill"><p>⚙ STUDIO OPTIONS &amp; VAULT</p></button>
-  <button id="btnFullscreen"><p class="DockText">⛶ FULLSCREEN [F]</p></button>
-  <button id="btnClean"><p class="DockText">X</p></button>
-</div>
-<button id="btnShowControlDock" class="ShowControlDock">
-  <p class="DockText">Show Control Dock</p></button>
 
+  <div id="controlDock" class="dockWrap">
+    <button id="btnCut30" class="secondaryActive"><p class="DockText">30S JUDGE DEMO</p></button>
+    <button id="btnPrev" title="Previous Chapter (Left Arrow)"><p class="DockText">⏮</p></button>
+    <button id="btnPlay" class="activePill"><p class="DockText">⏸ PLAY</p></button>
+    <button id="btnNext" title="Next Chapter (Right Arrow)"><p class="DockText">⏭</p></button>
+    <button id="btnRestart" title="Restart Broadcast (R)"><p class="DockText">↺</p></button>
+    <button id="btnCutFull"><p class="DockText">FULL STORY</p></button>
+    <button id="btnStudioOptions" class="goldPill"><div class="DockText">⚙ MORE OPTIONS</div></button>
+    <button id="btnFullscreen"><p class="DockText">⛶ FULLSCREEN [F]</p></button>
+    <button id="btnClean"><p class="DockText">X</p></button>
+  </div>
+  <button id="btnShowControlDock" class="ShowControlDock">
+    <p class="DockText">Show Control Dock</p></button>
+    
+    <div id="scrubberBar" class="timelineBar"></div>
 
-<div id="scrubberBar" class="timelineBar"></div>
-
-<script id="bakedAssetScript">
-window.BAKED_ASSETS = window.BAKED_ASSETS || {};
-</script>
 
 <script type="module" src="script.js" ></script>
 
