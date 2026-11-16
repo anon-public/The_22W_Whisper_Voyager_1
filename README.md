@@ -7,7 +7,10 @@
 <i>
 24.7 Billion Km Away & Still Going...
 </i>
+
+<video src="/DEMO_VIDEO.mp4" width="600" controls></video>
 </div>
+
 
 # Table of Contents
 - [Overview](#overview)
@@ -17,6 +20,8 @@
 
 # Overview
 An interactive, browser-based multimedia broadcast exploring the legacy of humanity's deep space missions. Built for the NASA Space Apps Challenge, this project synchronizes procedural space visuals, dynamic telemetry data, and ambient audio into a continuous cinematic web experience.
+
+<b>Live Project Link:</b> https://the22wwhispervoyager1.netlify.app 
 
 # Features
 * **Interactive Timeline:** Scrubber-controlled chapter navigation with live telemetry decoding and synchronized UI updates.
